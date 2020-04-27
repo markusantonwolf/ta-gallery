@@ -24,5 +24,5 @@ npm run build
 
 ## Copyright
 
-© 2019-2020 Markus A. WOlf
+© 2019-2020 Markus A. Wolf
 <https://www.markusantonwolf.com>
