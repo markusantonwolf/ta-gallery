@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TA Gallery</title>
+    <link href="/assets/css/tailwind.css" rel="stylesheet" />
+    <link href="/assets/css/gallery.css" rel="stylesheet" />
+    <link href="/assets/css/gallery-keyframes-swing.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/assets/js/alpine.min.js" defer></script>
+  </head>
+  <body
+    class="bg-white font-sans tracking-wide leading-loose tracking-wide text-base text-gray-900 font-light hyphens antialiased"
+  >
+    <div class="flex flex-col min-h-screen">
+      <div class="flex-grow">
+        <div class="container mx-auto text-center my-6">
+          <div class="mx-12 md:w-2/3 leading-normal mx-auto">
+            <h1 class="text-5xl font-light">
+              TA-Gallery
+            </h1>
+            <p class="text-xl font-light">
+              A light-weight, responsive and mobile first image gallery based on Tailwind CSS and Alpine JS. 100%
+              customizable and endless animation options. If you already use Tailwind CSS and Alpine JS in your project
+              you might consider using this image gallery.
+            </p>
+          </div>
+          <div class="my-12">
+            <h2 class="text-4xl font-light">
+              Flexible with background description
+            </h2>
+            <div
+              class="gallery flex-grow relative mx-auto bg-gray-100 rounded-lg shadow-xl"
+              x-data="gallery()"
+              x-init="init()"
+              style="min-height: 500px; max-height: 1000px;"
+            >
+              <div class="gallery__item rounded-lg overflow-hidden">
+                <img
+                  src="https://picsum.photos/1024/768?random=1"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div class="gallery__item gallery__hidden rounded-lg overflow-hidden">
+                <img
+                  src="https://picsum.photos/1024/768?random=2"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div class="gallery__item gallery__hidden rounded-lg overflow-hidden">
+                <img
+                  src="https://picsum.photos/1024/768?random=3"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div class="gallery__item gallery__hidden rounded-lg overflow-hidden">
+                <img
+                  src="https://picsum.photos/1024/768?random=4"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div
+                class="gallery__background bg-gray-200 flex flex-col justify-center items-center rounded-lg overflow-hidden"
+              >
+                <h2 class="text-4xl font-semibold text-gray-400 w-2/3">
+                  Picture Gallery
+                </h2>
+                <h3 class="text-xl font-semibold text-gray-400 leading-normal w-2/3">
+                  Background info about the specific gallery and some random text.
+                </h3>
+              </div>
+              <a
+                class="gallery__nav gallery__nav--right text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+                x-on:click="next()"
+              >
+                <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="gallery__nav gallery__nav--left text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+                x-on:click="previous()"
+              >
+                <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="my-12">
+            <h2 class="text-4xl font-light">
+              Flexible with background image and description
+            </h2>
+            <div class="gallery flex-grow relative mx-auto" x-data="gallery()" x-init="init()">
+              <div class="gallery__item rounded-lg overflow-hidden" x-ref="height">
+                <img
+                  src="https://picsum.photos/1280/480?random=1"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div class="gallery__item gallery__hidden rounded-lg overflow-hidden">
+                <img
+                  src="https://picsum.photos/1280/480?random=2"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div class="gallery__item gallery__hidden rounded-lg overflow-hidden">
+                <img
+                  src="https://picsum.photos/1280/480?random=3"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div class="gallery__item gallery__hidden rounded-lg overflow-hidden">
+                <img
+                  src="https://picsum.photos/1280/480?random=4"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div
+                class="gallery__background bg-white flex flex-col justify-center items-center rounded-lg overflow-hidden"
+              >
+                <h2 class="text-4xl font-semibold text-gray-900 w-2/3">
+                  Picture Gallery
+                </h2>
+                <h3 class="text-xl font-semibold text-gray-900 leading-normal w-2/3">
+                  Background info about the specific gallery and some random text.
+                </h3>
+                <img
+                  src="https://i.picsum.photos/id/4/800/600.jpg"
+                  alt=""
+                  class="gallery__background--image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <a
+                class="gallery__nav gallery__nav--right text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+                x-on:click="next()"
+              >
+                <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="gallery__nav gallery__nav--left text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+                x-on:click="previous()"
+              >
+                <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="my-12">
+            <h2 class="text-4xl font-light">
+              Fixed with no background
+            </h2>
+            <div class="gallery flex-grow relative mx-auto" x-data="gallery()" x-init="init()">
+              <div class="gallery__item rounded-lg overflow-hidden" x-ref="size">
+                <img
+                  src="https://picsum.photos/640/480?random=1"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div class="gallery__item gallery__hidden rounded-lg overflow-hidden">
+                <img
+                  src="https://picsum.photos/640/480?random=2"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div class="gallery__item gallery__hidden rounded-lg overflow-hidden">
+                <img
+                  src="https://picsum.photos/640/480?random=3"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <div class="gallery__item gallery__hidden rounded-lg overflow-hidden">
+                <img
+                  src="https://picsum.photos/640/480?random=4"
+                  alt=""
+                  class="gallery__image object-cover object-center"
+                  title="Image Title"
+                />
+              </div>
+              <a
+                class="gallery__nav gallery__nav--right text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+                x-on:click="next()"
+              >
+                <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="gallery__nav gallery__nav--left text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+                x-on:click="previous()"
+              >
+                <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-blue-900 text-white font-medium">
+        <div class="container mx-auto py-6 text-center">
+          <p class="text-xs mx-2">
+            Licensed under the MIT license, see LICENSE.md for details.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/gallery.js"></script>
+  </body>
+</html>

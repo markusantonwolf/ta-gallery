@@ -1,0 +1,3 @@
+{
+  "ignoreFiles": ["**/*.js","**/*.json"]
+}

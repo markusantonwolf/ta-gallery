@@ -1,0 +1,112 @@
+/* NO PURGE */
+
+.gallery {
+  --gallery_width: 100%;
+  --gallery_height: 100%;
+  width: 100%;
+  height: 100%;
+  height: var(--gallery_height);
+  max-width: var(--gallery_width);
+  max-height: var(--gallery_height);
+  perspective: 1000px;
+  perspective-origin: center center;
+  -webkit-tap-highlight-color: rgb(0, 0, 0, 0);
+}
+
+.gallery__item,
+.gallery__background,
+.gallery__background--image,
+.gallery__image {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery__hidden {
+  opacity: 0;
+}
+
+.gallery__background {
+  z-index: 0;
+}
+
+.gallery__background--image {
+  z-index: -1;
+  filter: blur(5px) grayscale(1);
+  opacity: 0.5;
+}
+
+.gallery__nav {
+  position: absolute;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  opacity: 0.5;
+  transform: translateY(-50%) scale(1);
+  transition: transform 0.2s ease-in-out, opacity 0.2s linear;
+}
+
+.gallery__nav:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.3);
+  transition: transform 0.3s ease-in-out, opacity 0.2s linear;
+}
+
+.gallery__nav--left {
+  left: 0.5rem;
+}
+
+.gallery__nav--right {
+  right: 0.5rem;
+}
+
+.gallery__anim-right-in {
+  animation-name: anim-right-in;
+  animation-timing-function: ease-in;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+  animation-duration: 0.3s;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  opacity: 1;
+}
+
+.gallery__anim-right-out {
+  animation-name: amin-right-out;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-fill-mode: both;
+  animation-duration: 0.3s;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  opacity: 1;
+}
+
+.gallery__anim-left-in {
+  animation-name: anim-left-in;
+  animation-timing-function: ease-in;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+  animation-duration: 0.3s;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  opacity: 1;
+}
+
+.gallery__anim-left-out {
+  animation-name: anim-left-out;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-fill-mode: both;
+  animation-duration: 0.3s;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  opacity: 1;
+}

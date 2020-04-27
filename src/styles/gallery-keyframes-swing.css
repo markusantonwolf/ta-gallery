@@ -1,0 +1,41 @@
+@keyframes anim-right-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotate3d(0, 1, 0, -90deg) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate3d(0, 1, 0, 0deg) translateZ(0);
+  }
+}
+@keyframes amin-right-out {
+  from {
+    opacity: 1;
+    transform: scale(1) rotate3d(0, 1, 0, 0deg) translateZ(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) rotate3d(0, 1, 0, 90deg) translateZ(0);
+  }
+}
+
+@keyframes anim-left-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotate3d(0, 1, 0, 90deg) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate3d(0, 1, 0, 0deg) translateZ(0);
+  }
+}
+@keyframes anim-left-out {
+  from {
+    opacity: 1;
+    transform: scale(1) rotate3d(0, 1, 0, 0deg) translateZ(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) rotate3d(0, 1, 0, -90deg) translateZ(0);
+  }
+}

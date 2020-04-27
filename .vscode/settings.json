@@ -1,0 +1,16 @@
+{
+  "css.validate": false, // Disable css built-in lint
+  "stylelint.enable": true, // Enable sytlelint
+  "workbench.colorCustomizations": {
+    "activityBar.foreground": "#de2ea6",
+    "activityBarBadge.foreground": "#000",
+    "activityBarBadge.background": "#de2ea6"
+  },
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "editor.wrappingIndent": "indent",
+  "debug.console.wordWrap": false,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.host": "ta-gallery.local",
+  "liveServer.settings.root": "/public"
+}
