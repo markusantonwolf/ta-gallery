@@ -1,3 +1,7 @@
+## Demos and documentation
+
+For more details about the TA-Gallery take a look at <https://ta-gallery.markusantonwolf.com>
+
 ## Download
 
 TA Gallery is released under the MIT license & supports modern environments.

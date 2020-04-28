@@ -8,7 +8,7 @@
     transform: scale(1) translateX(0) translateZ(0);
   }
 }
-@keyframes amin-right-out {
+@keyframes anin-right-out {
   from {
     opacity: 1;
     transform: scale(1) translateX(0) translateZ(0);
