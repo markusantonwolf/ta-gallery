@@ -4,7 +4,7 @@ function gallery() {
     active: 0,
     default: {
       item: 'gallery__item',
-      hidden: 'gallery__hidden',
+      hidden: 'gallery__item--hidden',
       left_in: 'gallery__anim-left-in',
       left_out: 'gallery__anim-left-out',
       right_in: 'gallery__anim-right-in',
