@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/assets/img/ta-gallery.png" width="600px" />
+  <img src="./public/assets/img/ta-gallery.png" width="900px" />
 </p>
 
 ## Demos and documentation
