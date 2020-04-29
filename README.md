@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./public/assets/img/ta-gallery.png" width="600px" />
+</p>
+
 ## Demos and documentation
 
 For more details about the TA-Gallery take a look at <https://ta-gallery.markusantonwolf.com>
