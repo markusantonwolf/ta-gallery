@@ -23,6 +23,8 @@ Use TA-Gallery as a part of your Tailwind CSS and Alpine JS project. You can use
 
 For more details about the TA-Gallery take a look at <https://ta-gallery.markusantonwolf.com>
 
+You can see a real world example on my homepage: <https://www.markusantonwolf.com/en/work>
+
 ## Download
 
 TA Gallery is released under the MIT license & supports modern environments.
