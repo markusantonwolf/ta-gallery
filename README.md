@@ -4,9 +4,18 @@
 
 ## TA-Gallery
 
-An image and content gallery which is 100% customizable and has endless animation options. If you already use Tailwind CSS and Alpine JS in your project you might consider using TA-Gallery.
+An image and content gallery which is 100% customizable and has endless animation options. If you already use Tailwind CSS and Alpine JS in your project you might consider using TA-Gallery. If you are aware of speed loading then you can use the lazy loading feature so you can keep you web page speed high.
 
 Use TA-Gallery as a part of your Tailwind CSS and Alpine JS project. You can use it as a stand alone version but it works best together with your own scripts and enhancements. The gallery is designed to fit in every project, in every grid and in every flexbox based on these two frameworks so please try it out and if you have some feedback.
+
+## Features
+
+- Lazy loading
+- Small file sizes JS + CSS = 6.2 kByte
+- Fixed sizes
+- Predefined sizes
+- Dynamic sizes
+- Use of Alpine JS and Tailwind CSS + BEM
 
 ## Demos and documentation
 
