@@ -11,10 +11,12 @@ Use TA-Gallery as a part of your Tailwind CSS and Alpine JS project. You can use
 ## Features
 
 - Lazy loading
+- Fixed image sizes
+- Predefined image sizes
+- Dynamic image sizes by width, height or size
+- Customizable animations - CSS animations
+- Customizable class names
 - Small file sizes JS + CSS = 6.2 kByte
-- Fixed sizes
-- Predefined sizes
-- Dynamic sizes
 - Use of Alpine JS and Tailwind CSS + BEM
 
 ## Demos and documentation
