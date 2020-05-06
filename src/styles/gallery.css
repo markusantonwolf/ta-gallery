@@ -9,7 +9,6 @@
   max-height: var(--gallery_height);
   perspective: 1000px;
   perspective-origin: center center;
-  -webkit-tap-highlight-color: rgb(0, 0, 0, 0);
 }
 .gallery__item,
 .gallery__background,
@@ -26,6 +25,14 @@
 }
 .gallery__item--hidden {
   opacity: 0;
+}
+.gallery__image--lazy {
+  width: 20vw;
+  max-width: 100px;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .gallery__background {
   z-index: 0;
@@ -45,6 +52,7 @@
   color: white;
   transform: translateY(-50%) scale(1);
   transition: transform 0.2s ease-in-out;
+  -webkit-tap-highlight-color: rgb(0, 0, 0, 0);
 }
 .gallery__nav:hover {
   box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);

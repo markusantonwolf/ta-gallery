@@ -9,6 +9,8 @@ function gallery() {
       left_out: 'gallery__anim-left-out',
       right_in: 'gallery__anim-right-in',
       right_out: 'gallery__anim-right-out',
+      lazy: 'gallery__image--lazy',
+      index: 0,
     },
     elements: [],
     init(values) {
@@ -18,41 +20,67 @@ function gallery() {
         }
       }
 
+      // like super on react 😃
+      var self = this
       var el = this.$el
-      var items = this.$el.querySelectorAll('.' + this.default.item)
-      items.forEach((item) => {
-        this.elements.push(item)
+
+      var ref_obj = null
+      var ref_types = ['height', 'width', 'size']
+      var ref_type = ''
+      ref_types.forEach(function (item) {
+        if (typeof self.$refs[item] !== 'undefined') {
+          ref_obj = self.$refs[item].querySelector('img')
+          ref_type = item
+        }
       })
 
+      // get all items inside the gallery
+      var items = this.$el.querySelectorAll('.' + this.default.item)
+
+      // walk through every element and create a virtual image for onload
+      items.forEach((item) => {
+        this.elements.push(item)
+
+        // define image inside of item
+        var image = item.querySelector('img')
+
+        // check if the image uses lazy loading
+        var isLazy = false
+        if (image.classList.contains(this.default.lazy) && typeof image.dataset.src !== 'undefined') {
+          isLazy = true
+        }
+
+        // virtual image
+        var image_virtual = new Image()
+        image_virtual.onload = function () {
+          if (isLazy) {
+            image.classList.remove(self.default.lazy)
+            image.src = image_virtual.src
+          }
+          var aspect_ratio = image_virtual.naturalWidth / image_virtual.naturalHeight
+          if (ref_obj !== null) {
+            if (ref_obj.src === image.src) {
+              if (ref_type === 'height') {
+                el.style.setProperty('--gallery_height', image_virtual.height + 'px')
+              } else if (ref_type === 'width') {
+                el.style.setProperty('--gallery_width', image_virtual.width + 'px')
+                el.style.setProperty('--gallery_height', Math.floor(image.width / aspect_ratio) + 'px')
+              } else if (ref_type === 'size') {
+                el.style.setProperty('--gallery_width', image_virtual.width + 'px')
+                el.style.setProperty('--gallery_height', image_virtual.height + 'px')
+              }
+            }
+          }
+        }
+
+        // set the image src for the virtual image
+        if (isLazy) {
+          image_virtual.src = image.dataset.src
+        } else {
+          image_virtual.src = image.src
+        }
+      })
       this.elements[0].classList.remove(this.default.hidden)
-
-      // if (typeof this.$refs.size !== "undefined") {
-      //   this.$refs.size.querySelector("img").onload = function (event) {
-      //     el.style.setProperty(
-      //       "--gallery_width",
-      //       event.target.naturalWidth + "px"
-      //     );
-      //     el.style.setProperty(
-      //       "--gallery_height",
-      //       event.target.naturalHeight + "px"
-      //     );
-      //   };
-      // }
-
-      if (typeof this.$refs.height !== 'undefined') {
-        this.setSize('height', this.$el)
-      }
-      if (typeof this.$refs.width !== 'undefined') {
-        this.setSize('width', this.$el)
-      }
-      if (typeof this.$refs.size !== 'undefined') {
-        this.setSize('size', this.$el)
-      }
-
-      // imagesLoaded(items[0], function (instance) {
-      //   el.style.setProperty("--gallery_width", items[0].naturalWidth + "px");
-      //   el.style.setProperty("--gallery_height", items[0].naturalHeight + "px");
-      // });
     },
     next() {
       this.last = this.active
@@ -88,16 +116,6 @@ function gallery() {
       this.elements[this.active].classList.add(this.default.left_in)
       this.elements[this.last].classList.add(this.default.hidden, this.default.left_out)
       this.elements[this.last].classList.remove(this.default.right_in, this.default.right_out, this.default.left_in)
-    },
-    setSize(ref, el) {
-      this.$refs[ref].querySelector('img').onload = function (event) {
-        if (['width', 'size'].indexOf(ref) !== -1) {
-          el.style.setProperty('--gallery_width', event.target.naturalWidth + 'px')
-        }
-        if (['height', 'size'].indexOf(ref) !== -1) {
-          el.style.setProperty('--gallery_height', event.target.naturalHeight + 'px')
-        }
-      }
     },
   }
 }
