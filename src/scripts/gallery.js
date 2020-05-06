@@ -43,6 +43,9 @@ function gallery() {
 
         // define image inside of item
         var image = item.querySelector('img')
+        if (image === null) {
+          return false
+        }
 
         // check if the image uses lazy loading
         var isLazy = false
