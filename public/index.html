@@ -13,24 +13,27 @@
     />
     <script src="/assets/js/alpine.min.js" defer></script>
   </head>
-  <body
-    class="bg-white font-sans tracking-wide leading-loose tracking-wide text-base text-gray-900 font-light hyphens antialiased"
-  >
+  <body class="bg-white font-sans leading-loose tracking-wide text-base text-gray-900 font-light hyphens antialiased">
     <div class="flex flex-col min-h-screen">
       <div class="flex-grow">
-        <div class="container mx-auto text-center my-6">
-          <div class="mx-12 md:w-2/3 leading-normal mx-auto">
-            <h1 class="text-5xl font-light">
-              TA-Gallery
+        <div class="container mx-auto text-center text-xl font-light my-6">
+          <div class="md:w-2/3 leading-normal text-xl font-light mx-auto px-5 sm:px-2">
+            <h1 class="mx-auto w-1/2 my-8">
+              <img src="/assets/img/logo-ta-gallery.png" alt="Logo TA Gallery" class="w-full" />
             </h1>
-            <p class="text-xl font-light">
+            <p class="my-4">
               A light-weight, responsive and mobile first image gallery based on Tailwind CSS and Alpine JS. 100%
               customizable and endless animation options. If you already use Tailwind CSS and Alpine JS in your project
               you might consider using this image gallery.
             </p>
+            <p class="my-4">
+              <a class="inline-block text-pink-800 font-semibold hover:text-black hover:underline mx-2" href="https://ta-pagination.markusantonwolf.com" target="_blank">DEMO</a>
+              <a class="inline-block text-pink-800 font-semibold hover:text-black hover:underline mx-2" href="https://ta-pagination.markusantonwolf.com" target="_blank">DOCU</a>
+              <a class="inline-block text-pink-800 font-semibold hover:text-black hover:underline mx-2" href="https://www.markusantonwolf.com/en/blog/vue-js" target="_blank">REAL LIVE</a>
+            </p>
           </div>
           <div class="my-12">
-            <h2 class="text-4xl font-light">
+            <h2 class="text-4xl font-light leading-snug">
               Flexible with background description
             </h2>
             <div
@@ -104,7 +107,7 @@
             </div>
           </div>
           <div class="my-12">
-            <h2 class="text-4xl font-light">
+            <h2 class="text-4xl font-light leading-snug">
               Flexible with background image and description
             </h2>
             <div class="gallery flex-grow relative mx-auto" x-data="gallery()" x-init="init({index:20})">
@@ -143,7 +146,7 @@
               <div
                 class="gallery__background bg-white flex flex-col justify-center items-center sm:rounded-lg overflow-hidden"
               >
-                <h2 class="text-4xl font-semibold text-gray-900 w-2/3">
+                <h2 class="text-4xl font-semibold text-gray-900 leading-snug w-2/3">
                   Picture Gallery
                 </h2>
                 <h3 class="text-xl font-semibold text-gray-900 leading-normal w-2/3">
@@ -179,7 +182,7 @@
             </div>
           </div>
           <div class="my-12">
-            <h2 class="text-4xl font-light">
+            <h2 class="text-4xl font-light leading-snug">
               Fixed with no background
             </h2>
             <div class="gallery flex-grow relative mx-auto" x-data="gallery()" x-init="init()">
@@ -238,7 +241,7 @@
             </div>
           </div>
           <div class="my-12">
-            <h2 class="text-4xl font-light">
+            <h2 class="text-4xl font-light leading-snug">
               Fixed with lazy loading
             </h2>
             <div class="gallery flex-grow relative mx-auto" x-data="gallery()" x-init="init()">
@@ -303,11 +306,29 @@
             </div>
           </div>
         </div>
+        <div class="w-full bg-gray-200">
+          <div class="max-w-2xl w-full lg:w-1/2 leading-normal text-xl font-light mx-auto py-12 px-2">
+            <div class="mx-auto w-1/2 my-8">
+              <img src="/assets/img/logo-ta-styled-plugins.png" alt="Logo TA StyledPLUGINS" class="w-full" />
+            </div>
+            <p class="pb-4">
+              TA StylesPLUGINS stands for light-weight, responsive and mobile first. All plugins are based on Tailwind
+              CSS and Alpine JS. All are 100% customizable with endless animation options.
+            </p>
+            <p class="pb-4">
+              <a href="https://github.com/markusantonwolf/ta-pagination" target="_blank" class="text-pink-800 hover:text-black hover:underline font-semibold">TA-Pagination</a> - A content pagination solution
+            </p>
+          </div>
+        </div>
       </div>
       <div class="bg-blue-900 text-white font-medium">
         <div class="container mx-auto py-6 text-center">
           <p class="text-xs mx-2">
-            Licensed under the MIT license, see <a href="https://github.com/markusantonwolf/ta-gallery/blob/master/licence.md" target="_blank">LICENSE.md</a> for details.
+            Licensed under the MIT license, see
+            <a href="https://github.com/markusantonwolf/ta-gallery/blob/master/licence.md" target="_blank"
+              >LICENSE.md</a
+            >
+            for details.
           </p>
         </div>
       </div>
