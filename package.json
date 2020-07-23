@@ -12,10 +12,10 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@fullhuman/postcss-purgecss": "^2.1.0",
-    "alpinejs": "^2.3.1",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "alpinejs": "^2.5.0",
     "babel-polyfill": "^6.26.0",
     "config": "^3.3.0",
     "cssnano": "^4.1.10",
@@ -30,6 +30,6 @@
     "gulp-touch-fd": "^2.0.0",
     "gulp-uglify-es": "^2.0.0",
     "postcss-import": "^12.0.1",
-    "tailwindcss": "^1.2.0"
+    "tailwindcss": "^1.5.2"
   }
 }
