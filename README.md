@@ -27,9 +27,21 @@ You can see a real world example on my homepage: <https://www.markusantonwolf.co
 - Small file sizes JS + CSS = 6.2 kByte
 - Use of Alpine JS and Tailwind CSS + BEM
 
-## More TA StyledPlugins
+## CDN
 
-- [TA Pagination](https://github.com/markusantonwolf/ta-pagination) - A content pagination solution
+### TA-Gallery
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/markusantonwolf/ta-gallery@latest/dist/js/gallery.js"></script>
+```
+
+## All TA StyledPlugins
+
+-   [TA-Gallery](https://github.com/markusantonwolf/ta-gallery) - An image gallery with endless animation options.
+-   [TA-Pagination](https://github.com/markusantonwolf/ta-pagination) - A content pagination solution.
+-   [TA-Youtube](https://github.com/markusantonwolf/ta-youtube) - A YouTube video wrapper with auto playback and aspect ratio for the video player.
+-   [TA-Analytics](https://github.com/markusantonwolf/ta-analytics) - A plugin for every website that needs to have an easy and customizable Google Analytics “blocker”.
+-   [TA-Foodtrucks](https://github.com/markusantonwolf/ta-foodtrucks) - A plugin to show the next food truck and street food dates in your area.
 
 ## Local development
 
