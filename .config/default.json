@@ -1,0 +1,42 @@
+{
+    "source": {
+        "layout": "./src/styles/layout.css",
+        "plugin_js": ["./src/scripts/ta-*.js"],
+        "plugin_css": "./src/styles/ta-gallery.css",
+        "alpine_js": ["./node_modules/alpinejs/dist/alpine.js"],
+        "plugin_alpine_js": ["./node_modules/alpinejs/dist/alpine.js", "./dist/js/ta-gallery.js"],
+        "views": ["./src/views/index.html"]
+    },
+    "name": {
+        "alpine_js": "alpine.js",
+        "plugin_js": "ta-gallery.js",
+        "plugin_alpine_js": "alpine-ta-gallery.js"
+    },
+    "purge": {
+        "content": ["./public/*.html","./src/snippets/*.html","./src/views/*.html"]
+    },
+    "destination": {
+        "layout": "./dist/css",
+        "plugin_css": "./dist/css",
+        "plugin_css_anim": "./dist/css",
+        "alpine_js": "./dist/js",
+        "plugin_js": "./dist/js",
+        "plugin_alpine_js": "./dist/js",
+        "views": "./public"
+    },
+    "distribution": {
+        "styles": ["./dist/css/**/*.css"],
+        "scripts": ["./dist/js/**/*.js"]
+    },
+    "public": {
+        "styles": "./public/css",
+        "scripts": "./public/js"
+    },
+    "watch": {
+        "styles": "./src/styles/*.css",
+        "scripts": "./src/scripts/*.js",
+        "views": "./src/views/*.html",
+        "snippets": "./src/snippets/*.html"
+    },
+    "clean": ["./dist", "./public/css", "./public/js"]
+}

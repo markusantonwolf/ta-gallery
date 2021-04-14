@@ -1,24 +1,25 @@
-const { src, dest, parallel } = require('gulp')
 const config = require('config')
+const { src, dest, parallel } = require('gulp')
 const print = require('gulp-print').default
 
-const STYLES_DISTRIBUTION = config.get('gulp.styles.distribution')
-const STYLES_DESTINATION = config.get('gulp.styles.destination')
-const SCRIPTS_DISTRIBUTION = config.get('gulp.scripts.distribution')
-const SCRIPTS_DESTINATION = config.get('gulp.scripts.destination')
+const DISTRIBUTION_STYLES = config.get('distribution.styles')
+const DISTRIBUTION_SCRIPTS = config.get('distribution.scripts')
+const PUBLIC_SCRIPTS = config.get('public.scripts')
+const PUBLIC_STYLES = config.get('public.styles')
 
-const fnc_styles_copy = function () {
-  return src([STYLES_DISTRIBUTION + '/**/*.css'])
-    .pipe(dest(STYLES_DESTINATION))
-    .pipe(print())
+const copy_css = () => {
+    return src(DISTRIBUTION_STYLES, {
+        allowEmpty: true,
+    })
+        .pipe(dest(PUBLIC_STYLES))
+        .pipe(print())
+}
+const copy_js = () => {
+    return src(DISTRIBUTION_SCRIPTS, {
+        allowEmpty: true,
+    })
+        .pipe(dest(PUBLIC_SCRIPTS))
+        .pipe(print())
 }
 
-const fnc_scripts_copy = function () {
-  return src([SCRIPTS_DISTRIBUTION + '/**/*.js'])
-    .pipe(dest(SCRIPTS_DESTINATION))
-    .pipe(print())
-}
-
-module.exports.styles_copy = fnc_styles_copy
-module.exports.scripts_copy = fnc_scripts_copy
-module.exports.copy = parallel(fnc_styles_copy, fnc_scripts_copy)
+module.exports.copy = parallel(copy_css, copy_js)

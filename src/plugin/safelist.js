@@ -1,0 +1,8 @@
+module.exports = [
+    'ta-gallery-element-active',
+    'ta-gallery-anim-right-in',
+    'ta-gallery-anim-right-out',
+    'ta-gallery-anim-left-in',
+    'ta-gallery-anim-left-out',
+    'invisible',
+];

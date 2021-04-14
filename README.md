@@ -1,51 +1,115 @@
 <p align="center">
-  <img src="./public/assets/img/logo-ta-gallery.png" width="400px" />
+  <img src="./public/img/logo-ta-gallery.png" width="400px" />
 </p>
 
-# TA-Gallery
+# **TA-Gallery** - Image, content and text slider
 
-An image and content gallery which is 100% customizable and has endless animation options. If you already use Tailwind CSS and Alpine JS in your project you might consider using TA-Gallery. If you are aware of speed loading then you can use the lazy loading feature so you can keep you web page speed high.
+**You can use the light-weight, responsive and mobile first gallery, carousel, slide show or rotator for images, texts and every kind of content.**
 
-Use TA-Gallery as a part of your Tailwind CSS and Alpine JS project. You can use it as a stand alone version but it works best together with your own scripts and enhancements. The gallery is designed to fit in every project, in every grid and in every flexbox based on these two frameworks so please try it out and if you have some feedback.
+## Demos, Documentation and Examples
 
-## Demos and documentation
+[Documentation](https://ta-styled-plugins.com/ta-gallery/)
 
-[DEMO](https://ta-gallery.markusantonwolf.com) | [DOCU](https://ta-gallery.markusantonwolf.com) | [REALWORLD](https://www.markusantonwolf.com/en/work)
+[Getting started](https://ta-styled-plugins.com/ta-gallery/getting-started/)
 
-For more details about the TA-Gallery take a look at <https://ta-gallery.markusantonwolf.com>
+[Examples](https://ta-styled-plugins.com/ta-gallery/examples/)
 
-You can see a real world example on my homepage: <https://www.markusantonwolf.com/en/work>
+[Configuration](https://ta-styled-plugins.com/ta-gallery/configuration/)
+
+[Tailwind CSS plugin](https://ta-styled-plugins.com/ta-gallery/tailwind-css-plugin/)
 
 ## Features
 
-- Lazy loading
-- Fixed image sizes
-- Predefined image sizes
-- Dynamic image sizes by width, height or size
-- Customizable animations - CSS animations
-- Customizable class names
-- Small file sizes JS + CSS = 6.2 kByte
-- Use of Alpine JS and Tailwind CSS + BEM
+-   Animate every content - Choose every kind of content, image, text, table or list.
+-   Transitions - You can change the transition for every slide.
+-   Autoplay mode - Control the gallery the way you want to
+-   Supports accessibility - Actions, values and configurations
+-   Based on Alpine JS - Small footprint and Vue JS inspired, like Tailwind for JavaScript
+-   100% Tailwind CSS - Rapidly build modern websites without leaving your HTML
 
-## CDN
+## Install
 
-### TA-Gallery
+**From npm:** Install the package.
 
-```html
-<script src="https://cdn.jsdelivr.net/gh/markusantonwolf/ta-gallery@latest/dist/js/gallery.js"></script>
+```bash
+
+# Install using npm
+
+npm install --save-dev @markusantonwolf/ta-gallery
+
+# Install using yarn
+
+yarn add -D @markusantonwolf/ta-gallery
 ```
 
-## All TA StyledPlugins
+**Inside tailwind.config.js:** Add the plugin to your tailwind css config file.
 
--   [TA-Gallery](https://github.com/markusantonwolf/ta-gallery) - An image gallery with endless animation options.
--   [TA-Pagination](https://github.com/markusantonwolf/ta-pagination) - A content pagination solution.
--   [TA-Youtube](https://github.com/markusantonwolf/ta-youtube) - A YouTube video wrapper with auto playback and aspect ratio for the video player.
--   [TA-Analytics](https://github.com/markusantonwolf/ta-analytics) - A plugin for every website that needs to have an easy and customizable Google Analytics “blocker”.
--   [TA-Foodtrucks](https://github.com/markusantonwolf/ta-foodtrucks) - A plugin to show the next food truck and street food dates in your area.
+```js
+// tailwind.config.js
+
+const ta_gallery_safelist = require('./node_modules/@markusantonwolf/ta-gallery/src/plugin/safelist')
+
+module.exports = {
+    purge: {
+        // ...
+        options: {
+            safelist: [...ta_gallery_safelist],
+        },
+        // ...
+    },
+    // ...
+    theme: {
+        // ...
+        taGallery: {
+            animations: ['swing', 'swipe', 'slide', 'rotate', 'snake', 'window', 'scroll'],
+            animation_default: 'slide', // default value
+            aspect_ratios: [ // all aspect ratios
+                'square',
+                'movietone',
+                'large',
+                'tv',
+                'academy',
+                'imax',
+                'classic',
+                'still',
+                'modern',
+                'common',
+                'golden',
+                'super',
+                'hd',
+                'wide',
+                {
+                    instagram: 3 / 5, // add your own aspect ratio
+                },
+            ],
+        },
+        // ...
+    },
+    // ...
+    variants: {
+        // ...
+        taGallery: ['responsive'], // default value
+        extend: {
+            // ...
+        },
+    },
+    // ...
+    plugins: [
+        require('@markusantonwolf/ta-gallery')({
+            respectPrefix: true, // respect prefix option in config: true (default) | false
+            respectImportant: true, // respect important option in config: true (default) | false
+        }),
+    ],
+}
+```
+
+## More TA-Styled-Plugins
+
+-   [TA-Styled-Plugins](https://ta-styled-plugins.com/) - Explore all Tailwind CSS and Alpine JS styled plugins and learn how to enhance your website fast and easy.
 
 ## Local development
 
-```
+```bash
 // To install dev dependencies run:
 
 npm install
@@ -65,13 +129,11 @@ npm run build
 
 ## Licence
 
-TA Gallery is released under the [MIT license](https://github.com/markusantonwolf/ta-gallery/blob/master/licence.md) & supports modern environments.
+TA-Gallery is released under the [MIT license](https://github.com/markusantonwolf/ta-gallery/blob/master/licence.md) & supports modern environments.
 
 ## Copyright
 
-© 2020 Markus A. Wolf
+© 2021 Markus A. Wolf
 <https://www.markusantonwolf.com>
 
-<p align="center">
-  <img src="./public/assets/img/logo-ta-styled-plugins.png" width="200px" />
-</p>
+<img src="./public/img/logo-ta-styled-plugins.png" width="200px" style="padding-top:2rem;" />

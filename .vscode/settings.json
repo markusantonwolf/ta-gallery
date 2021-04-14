@@ -1,0 +1,29 @@
+{
+    "css.validate": false,
+    "stylelint.enable": true,
+    "editor.wordWrapColumn": 120,
+    "editor.wrappingIndent": "indent",
+    "editor.formatOnPaste": false,
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "debug.console.wordWrap": false,
+    "editor.tabSize": 4,
+    "html.format.contentUnformatted": "pre,code,textarea",
+    "html.format.endWithNewline": false,
+    "html.format.extraLiners": "head, body, /html",
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.maxPreserveNewLines": null,
+    "html.format.preserveNewLines": true,
+    "html.format.wrapLineLength": 180,
+    "html.format.wrapAttributes": "auto",
+    "files.insertFinalNewline": false,
+    "git.ignoreLimitWarning": true,
+    "tailwindCSS.includeLanguages": {
+        "plaintext": "html"
+    },
+    "liveServer.settings.port": 5502,
+    "liveServer.settings.root": "/public",
+    "tailwindCSS.emmetCompletions": true
+}

@@ -1,0 +1,156 @@
+{
+    "swing": {
+        "default": {
+            "transform": "scale(1) rotate3d(0, 1, 0, 0deg) translateZ(0)"
+        },
+        "rightIn": {
+            "transform": "scale(0.9) rotate3d(0, 1, 0, -90deg) translateZ(0)"
+        },
+        "rightOut": {
+            "transform": "scale(0.9) rotate3d(0, 1, 0, 90deg) translateZ(0)"
+        },
+        "leftIn": {
+            "transform": "scale(0.9) rotate3d(0, 1, 0, 90deg) translateZ(0)"
+        },
+        "leftOut": {
+            "transform": "scale(0.9) rotate3d(0, 1, 0, -90deg) translateZ(0)"
+        }
+    },
+    "slide": {
+        "default": {
+            "transform": "scale(1) translateX(0) translateZ(0)"
+        },
+        "rightIn": {
+            "transform": "scale(0.9) translateX(-100px) translateZ(0)"
+        },
+        "rightOut": {
+            "transform": "scale(0.9) translateX(100px) translateZ(0)"
+        },
+        "leftIn": {
+            "transform": "scale(0.9) translateX(100px) translateZ(0)"
+        },
+        "leftOut": {
+            "transform": "scale(0.9) translateX(-100px) translateZ(0)"
+        }
+    },
+    "swipe": {
+        "default": {
+            "transform": "scale(1) translateX(0) translateZ(0)"
+        },
+        "rightIn": {
+            "transform": "scale(1.1) translateX(-200px) translateZ(0)"
+        },
+        "rightOut": {
+            "transform": "scale(1.1) translateX(200px) translateZ(0)"
+        },
+        "leftIn": {
+            "transform": "scale(1.1) translateX(200px) translateZ(0)"
+        },
+        "leftOut": {
+            "transform": "scale(1.1) translateX(-200px) translateZ(0)"
+        }
+    },
+    "rotate": {
+        "default": {
+            "transform": "scale(1) rotate3d(1, 1, 0, 0deg) translateZ(0)"
+        },
+        "rightIn": {
+            "transform": "scale(0.9) rotate3d(1, 1, 0, -90deg) translateZ(0)"
+        },
+        "rightOut": {
+            "transform": "scale(0.9) rotate3d(1, 1, 0, 90deg) translateZ(0)"
+        },
+        "leftIn": {
+            "transform": "scale(0.9) rotate3d(1, 1, 0, 90deg) translateZ(0)"
+        },
+        "leftOut": {
+            "transform": "scale(0.9) rotate3d(1, 1, 0, -90deg) translateZ(0)"
+        }
+    },
+    "snake": {
+        "origin": {
+            "rightIn": "right center",
+            "rightOut": "left center",
+            "leftIn": "left center",
+            "leftOut": "right center"
+        },
+        "default": {
+            "transform": "scaleX(1) translateZ(0)"
+        },
+        "rightIn": {
+            "transform": "scaleX(0.6) translateZ(0)"
+        },
+        "rightOut": {
+            "transform": "scaleX(0.6) translateZ(0)"
+        },
+        "leftIn": {
+            "transform": "scaleX(0.6) translateZ(0)"
+        },
+        "leftOut": {
+            "transform": "scaleX(0.6) translateZ(0)"
+        }
+    },
+    "scroll": {
+        "origin": {
+            "rightIn": "right center",
+            "rightOut": "left center",
+            "leftIn": "left center",
+            "leftOut": "right center"
+        },
+        "default": {
+            "transform": "translateX(0) translateZ(0)"
+        },
+        "rightIn": {
+            "transform": "translateX(20vw) translateZ(0)"
+        },
+        "rightOut": {
+            "transform": "translateX(-20vw) translateZ(0)"
+        },
+        "leftIn": {
+            "transform": "translateX(-20vw) translateZ(0)"
+        },
+        "leftOut": {
+            "transform": "translateX(20vw) translateZ(0)"
+        }
+    },
+    "window": {
+        "origin": {
+            "rightIn": "right center",
+            "rightOut": "left center",
+            "leftIn": "left center",
+            "leftOut": "right center"
+        },
+        "default": {
+            "transform": "scale(1) rotate3d(0, 1, 0, 0deg) translateZ(0)"
+        },
+        "rightIn": {
+            "transform": "scale(0.9) rotate3d(0, 1, 0, -90deg) translateZ(0)"
+        },
+        "rightOut": {
+            "transform": "scale(0.9) rotate3d(0, 1, 0, 90deg) translateZ(0)"
+        },
+        "leftIn": {
+            "transform": "scale(0.9) rotate3d(0, 1, 0, 90deg) translateZ(0)"
+        },
+        "leftOut": {
+            "transform": "scale(0.9) rotate3d(0, 1, 0, -90deg) translateZ(0)"
+        }
+    },
+    "fade": {
+        "default": {
+            "transform": "scale(1) translateZ(0)"
+        },
+        "rightIn": {
+            "transform": "scale(0.98) translateZ(0)"
+        },
+        "rightOut": {
+            "transform": "scale(1.02) translateZ(0)"
+        },
+        "leftIn": {
+            "transform": "scale(0.98) translateZ(0)"
+        },
+        "leftOut": {
+            "transform": "scale(1.02) translateZ(0)"
+        }
+    }
+}

@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TA-Gallery</title>
-        <link href="/css/layout.css" rel="stylesheet" />
-        <script src="/js/alpine.min.js" defer></script>
-    </head>
-    <body class="bg-white font-sans tracking-wide leading-loose text-base text-gray-900 font-light hyphens antialiased">
-        <div class="flex flex-col min-h-screen">
-            <div class="flex-grow container mx-auto text-center my-6">
-                <div class="md:w-2/3 leading-normal text-xl font-light mx-auto px-5 sm:px-2">
-                    <h1 class="mx-auto w-1/2 my-8">
-                        <img src="/img/logo-ta-gallery.png" alt="Logo TA-Pagination" class="w-full" />
-                    </h1>
-                </div>
-                <div class="px-5 my-12">
-                    <h2 class="text-5xl leading-tight font-light mb-5">TA-Gallery</h2>
-                    <h3 class="text-2xl leading-snug font-light">
-                        You can use the light-weight, responsive and mobile first gallery, carousel, slide show or
-                        rotator for images, texts and every kind of content.
-                    </h3>
-                </div>
-                <div class="w-full lg:w-2/3 mx-auto">
-                    <div
+<div
     class="ta-gallery ta-gallery-aspect-hd mb-8"
     x-data="taGallery()"
     x-init="init()"
@@ -110,35 +85,3 @@
     </button>
     <!--- END BUTTONS /-->
 </div>
-
-                </div>
-            </div>
-            <div><div class="w-full bg-gray-50">
-    <div class="max-w-2xl w-full lg:w-1/2 leading-normal text-xl font-light mx-auto py-12 px-2">
-        <div class="mx-auto w-1/2 my-8">
-            <img src="/img/logo-ta-styled-plugins.png" alt="Logo TA StyledPLUGINS" class="w-full" />
-        </div>
-        <p class="text-center pb-4">
-            TA StylesPLUGINS stands for light-weight, responsive and mobile first. All plugins are based
-            on Tailwind CSS and Alpine JS. All are 100% customizable with endless animation options.
-        </p>
-    </div>
-</div>
- <div class="bg-blue-900 text-white font-medium">
-    <div class="container mx-auto py-6 text-center">
-        <p class="text-xs mx-2">
-            Licensed under the MIT license, see
-            <a
-                href="https://github.com/markusantonwolf/ta-gallery/blob/master/licence.md"
-                target="_blank"
-                >LICENSE.md</a
-            >
-            for details.
-        </p>
-    </div>
-</div>
-</div>
-        </div>
-        <script src="/js/ta-gallery.js"></script>
-    </body>
-</html>

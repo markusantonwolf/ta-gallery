@@ -1,35 +1,75 @@
 {
-  "name": "ts-gallery",
-  "version": "1.0.0",
-  "description": "A light-weight Tailwind CSS and Alpine JS image gallery",
-  "main": "/public/index.html",
-  "scripts": {
-    "develop": "npx gulp develop",
-    "build": "npx gulp build",
-    "serve": "npx gulp serve"
-  },
-  "author": "Markus A. Wolf",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@fullhuman/postcss-purgecss": "^2.3.0",
-    "alpinejs": "^2.7.0",
-    "babel-polyfill": "^6.26.0",
-    "config": "^3.3.2",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-live-server": "0.0.31",
-    "gulp-minify": "^3.1.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-print": "^5.0.2",
-    "gulp-touch-fd": "^2.0.0",
-    "gulp-uglify-es": "^2.0.0",
-    "postcss-import": "^12.0.1",
-    "tailwindcss": "^1.9.1"
-  }
+    "name": "@markusantonwolf/ta-gallery",
+    "version": "2.0.0",
+    "description": "You can use the light-weight, responsive and mobile first gallery, carousel, slide show or rotator for images, texts and every kind of content.",
+    "main": "src/plugin/index.js",
+    "scripts": {
+        "test": "NODE_ENV=test node ./src/plugin/index.js",
+        "develop": "npx gulp build",
+        "prebuild": "NODE_ENV=production node ./src/plugin/index.js",
+        "build": "NODE_ENV=production npx gulp build",
+        "serve": "npx gulp serve",
+        "upload": "npm publish --access public",
+        "patch": "npm version patch",
+        "minor": "npm version minor",
+        "major": "npm version major"
+    },
+    "author": {
+        "name": "Markus A. Wolf",
+        "email": "hello@markusantonwolf.com",
+        "url": "https://www.markusantonwolf.com/en/"
+    },
+    "homepage": "https://github.com/markusantonwolf/ta-gallery#readme",
+    "bugs": {
+        "url": "https://github.com/markusantonwolf/ta-gallery/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/markusantonwolf/ta-gallery.git"
+    },
+    "keywords": [
+        "tailwindcss",
+        "css",
+        "tailwind",
+        "alpinejs",
+        "alpine",
+        "gallery",
+        "slider",
+        "images",
+        "tailwindcss-plugin"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "change-case": "^4.1.2",
+        "lodash": "^4.17.20"
+    },
+    "peerDependencies": {
+        "tailwindcss": "^1.8.3 || ^2.0.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.13.15",
+        "@babel/preset-env": "^7.13.15",
+        "@fullhuman/postcss-purgecss": "^2.3.0",
+        "@markusantonwolf/tailwind-css-plugin-custom-color-palette": "^1.2.0",
+        "@markusantonwolf/tailwind-css-plugin-filters": "^1.2.1",
+        "alpinejs": "^2.8.2",
+        "autoprefixer": "^10.2.5",
+        "babel-polyfill": "^6.26.0",
+        "config": "^3.3.6",
+        "cssnano": "^4.1.11",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean": "^0.4.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-file-include": "^2.3.0",
+        "gulp-live-server": "0.0.31",
+        "gulp-minify": "^3.1.0",
+        "gulp-postcss": "^9.0.0",
+        "gulp-print": "^5.0.2",
+        "gulp-touch-fd": "^2.0.0",
+        "gulp-uglify-es": "^2.0.0",
+        "postcss": "^8.2.10",
+        "postcss-import": "^12.0.1",
+        "tailwindcss": "^2.1.1"
+    }
 }

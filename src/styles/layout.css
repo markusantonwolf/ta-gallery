@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+
+@tailwind utilities;
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[x-cloak] {
+    display: none;
+}

@@ -1,66 +1,64 @@
-const { dest, src, parallel } = require('gulp')
-const concat = require('gulp-concat')
-const touch = require('gulp-touch-fd')
 const config = require('config')
-const uglify = require('gulp-uglify-es').default
+const { src, dest, parallel, series } = require('gulp')
+const concat = require('gulp-concat')
 const babel = require('gulp-babel')
-const { getFiles } = require('./_tools')
+const minify = require('gulp-minify')
 
-const SCRIPTS_BASE = config.get('gulp.scripts.base')
-const SCRIPTS_DISTRIBUTION = config.get('gulp.scripts.distribution')
-const ALPINEJS_BASE = config.get('gulp.alpinejs.base')
-const ALPINEJS_DISTRIBUTION = config.get('gulp.alpinejs.distribution')
+const SOURCE_ALPINE = config.get('source.alpine_js')
+const NAME_ALPINE = config.get('name.alpine_js')
+const DESTINATION_ALPINE = config.get('destination.alpine_js')
 
-const scripts_bundle = getFiles(SCRIPTS_BASE)
-scripts_bundle.forEach((obj) => {
-  obj.dest = SCRIPTS_DISTRIBUTION
-})
+const SOURCE_PLUGIN_JS = config.get('source.plugin_js')
+const NAME_PLUGIN_JS = config.get('name.plugin_js')
+const DESTINATION_PLUGIN_JS = config.get('destination.plugin_js')
 
-const scripts_alpinejs = getFiles(ALPINEJS_BASE)
-scripts_alpinejs.forEach((obj) => {
-  scripts_bundle.push({
-    src: obj.src,
-    name: obj.name,
-    dest: ALPINEJS_DISTRIBUTION,
-  })
-})
+const SOURCE_PLUGIN_ALPINE_JS = config.get('source.plugin_alpine_js')
+const NAME_PLUGIN_ALPINE_JS = config.get('name.plugin_alpine_js')
+const DESTINATION_PLUGIN_ALPINE_JS = config.get('destination.plugin_alpine_js')
 
-const fnc_scripts_develop = new Array()
-const fnc_scripts_build = new Array()
-
-scripts_bundle.forEach((obj) => {
-  fnc_scripts_develop.push(function scripts_develop() {
-    return src(obj.src)
-      .pipe(concat(obj.name))
-      .pipe(
-        babel({
-          presets: ['@babel/env'],
-        })
-      )
-      .pipe(dest(obj.dest))
-      .pipe(touch())
-  })
-  fnc_scripts_build.push(function scripts_build() {
-    return src(obj.src)
-      .pipe(concat(obj.name))
-      .pipe(
-        babel({
-          presets: ['@babel/env'],
-        })
-      )
-      .pipe(uglify())
-      .pipe(dest(obj.dest))
-      .pipe(touch())
-  })
-})
-
-if (fnc_scripts_develop.length > 1) {
-  module.exports.scripts_develop = parallel(fnc_scripts_develop)
-} else {
-  module.exports.scripts_develop = fnc_scripts_develop
+const alpine_js = () => {
+    return src(SOURCE_ALPINE)
+        .pipe(concat(NAME_ALPINE))
+        .pipe(
+            minify({
+                ext: {
+                    min: '.min.js',
+                },
+                ignoreFiles: ['.min.js'],
+            })
+        )
+        .pipe(dest(DESTINATION_ALPINE))
 }
-if (fnc_scripts_build.length > 1) {
-  module.exports.scripts_build = parallel(fnc_scripts_build)
-} else {
-  module.exports.scripts_build = fnc_scripts_build
+const ta_script = () => {
+    return src(SOURCE_PLUGIN_JS)
+        .pipe(
+            babel({
+                presets: ['@babel/env'],
+            })
+        )
+        .pipe(concat(NAME_PLUGIN_JS))
+        .pipe(
+            minify({
+                ext: {
+                    min: '.min.js',
+                },
+                ignoreFiles: ['.min.js'],
+            })
+        )
+        .pipe(dest(DESTINATION_PLUGIN_JS))
 }
+const ta_script_alpine = () => {
+    return src(SOURCE_PLUGIN_ALPINE_JS)
+        .pipe(concat(NAME_PLUGIN_ALPINE_JS))
+        .pipe(
+            minify({
+                ext: {
+                    min: '.min.js',
+                },
+                ignoreFiles: ['.min.js'],
+            })
+        )
+        .pipe(dest(DESTINATION_PLUGIN_ALPINE_JS))
+}
+
+module.exports.scripts = series(parallel(alpine_js, ta_script), ta_script_alpine)

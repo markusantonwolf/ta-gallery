@@ -1,79 +1,43 @@
 module.exports = {
-  theme: {
-    fontFamily: {
-      sans: ['"Raleway"', 'sans-serif'],
+    purge: {
+        enabled: false,
     },
-    container: {
-      center: true,
+    theme: {
+        fontFamily: {
+            sans: ['Raleway', 'Helvetica', 'Arial', 'sans-serif'],
+            mono: ['"Fira Code"', 'Consolas', 'Monaco', 'Andale', 'Mono', '"Ubuntu Mon"', 'monospace'],
+        },
+        customColorPalette: {
+            colors: {
+                primary: '#841F3D',
+                secondary: '#2975A5',
+                gray: '#737b80',
+                teal: '#408075',
+            },
+            steps: 50,
+        },
+        taGallery: {
+            animations: ['swing', 'swipe', 'slide', 'rotate', 'snake', 'window', 'scroll'],
+            animation_default: 'slide', // default value
+            aspect_ratios: [
+                'wide',
+                'hd',
+                'super',
+                'common',
+                'modern',
+                {
+                    instagram: 3 / 5,
+                },
+            ],
+        },
+        extend: {},
     },
-    extend: {
-      gridTemplateRows: {
-        'auto-2': 'repeat(2, minmax(0, auto))',
-      },
-      gridTemplateColumns: {
-        'auto-2': 'repeat(2, minmax(0, auto))',
-      },
-      borderRadius: {
-        xl: '1rem',
-      },
-      maxWidth: {
-        '5': '5rem',
-        '6': '6rem',
-        '7': '7rem',
-        '8': '8rem',
-        '9': '9rem',
-        '10': '10rem',
-        '1/4': '25%',
-        '1/2': '50%',
-        '3/4': '75%',
-      },
-      minWidth: {
-        '1/4': '25%',
-        '1/2': '50%',
-        '3/4': '75%',
-      },
-      colors: {
-        primary: '#841F51',
-        secondary: '#314361',
-        headline: '#314361',
-        copy: '#2C2C2C',
-        footer: '#314361',
-        'mountain-100': '#8390a8',
-        'mountain-200': '#dfe4ed',
-      },
-      spacing: {
-        '72': '18rem',
-        '1/2': '50%',
-        '1/3': '33.333333%',
-        '2/3': '66.666667%',
-        '1/4': '25%',
-        '2/4': '50%',
-        '3/4': '75%',
-        '1/5': '20%',
-        '2/5': '40%',
-        '3/5': '60%',
-        '4/5': '80%',
-        '1/6': '16.666667%',
-        '2/6': '33.333333%',
-        '3/6': '50%',
-        '4/6': '66.666667%',
-        '5/6': '83.333333%',
-        '1/12': '8.333333%',
-        '2/12': '16.666667%',
-        '3/12': '25%',
-        '4/12': '33.333333%',
-        '5/12': '41.666667%',
-        '6/12': '50%',
-        '7/12': '58.333333%',
-        '8/12': '66.666667%',
-        '9/12': '75%',
-        '10/12': '83.333333%',
-        '11/12': '91.666667%',
-      },
+    variants: {
+        taGallery: ['responsive'],
     },
-  },
-  variants: {
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-  },
-  plugins: [],
+    plugins: [
+        require('./src/plugin/index.js'),
+        require('@markusantonwolf/tailwind-css-plugin-filters'),
+        require('@markusantonwolf/tailwind-css-plugin-custom-color-palette'),
+    ],
 }
