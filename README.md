@@ -63,7 +63,8 @@ module.exports = {
         taGallery: {
             animations: ['swing', 'swipe', 'slide', 'rotate', 'snake', 'window', 'scroll'],
             animation_default: 'slide', // default value
-            aspect_ratios: [ // all aspect ratios
+            aspect_ratios: [
+                // all aspect ratios
                 'square',
                 'movietone',
                 'large',
@@ -136,4 +137,6 @@ TA-Gallery is released under the [MIT license](https://github.com/markusantonwol
 © 2021 Markus A. Wolf
 <https://www.markusantonwolf.com>
 
-<img src="./public/img/logo-ta-styled-plugins.png" width="200px" style="padding-top:2rem;" />
+<p>
+<img src="./public/img/logo-ta-styled-plugins.png" width="160px" style="display:block;padding-top:4rem;" />
+</p>
