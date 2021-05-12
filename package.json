@@ -1,6 +1,6 @@
 {
     "name": "@markusantonwolf/ta-gallery",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "You can use the light-weight, responsive and mobile first gallery, carousel, slide show or rotator for images, texts and every kind of content.",
     "main": "src/plugin/index.js",
     "scripts": {
