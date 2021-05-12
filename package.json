@@ -47,11 +47,12 @@
         "tailwindcss": "^1.8.3 || ^2.0.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.13.15",
-        "@babel/preset-env": "^7.13.15",
+        "@babel/core": "^7.14.0",
+        "@babel/preset-env": "^7.14.1",
         "@fullhuman/postcss-purgecss": "^2.3.0",
         "@markusantonwolf/tailwind-css-plugin-custom-color-palette": "^1.2.0",
         "@markusantonwolf/tailwind-css-plugin-filters": "^1.2.1",
+        "hosted-git-info": "^2.8.9",
         "alpinejs": "^2.8.2",
         "autoprefixer": "^10.2.5",
         "babel-polyfill": "^6.26.0",
@@ -68,8 +69,8 @@
         "gulp-print": "^5.0.2",
         "gulp-touch-fd": "^2.0.0",
         "gulp-uglify-es": "^2.0.0",
-        "postcss": "^8.2.10",
+        "postcss": "^8.2.15",
         "postcss-import": "^12.0.1",
-        "tailwindcss": "^2.1.1"
+        "tailwindcss": "^2.1.2"
     }
 }
