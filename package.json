@@ -53,6 +53,7 @@
         "@markusantonwolf/tailwind-css-plugin-custom-color-palette": "^1.2.0",
         "@markusantonwolf/tailwind-css-plugin-filters": "^1.2.1",
         "hosted-git-info": "^2.8.9",
+        "yargs-parser": ">=5.0.0-security.0",
         "alpinejs": "^2.8.2",
         "autoprefixer": "^10.2.5",
         "babel-polyfill": "^6.26.0",
