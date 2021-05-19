@@ -6,7 +6,7 @@ const fs = require('fs')
 const _ = require('lodash')
 
 const ta_config_defaults = {
-    animations: ['swing', 'swipe', 'slide', 'rotate', 'snake', 'window', 'scroll'],
+    animations: ['swing', 'swipe', 'slide', 'rotate', 'snake', 'window', 'scroll', 'fade'],
     animation_default: 'slide',
     aspect_ratios: [
         'square',
