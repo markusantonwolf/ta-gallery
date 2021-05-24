@@ -17,7 +17,7 @@ module.exports = {
             steps: 50,
         },
         taGallery: {
-            animations: ['swing', 'swipe', 'slide', 'rotate', 'snake', 'window', 'scroll', 'fade'],
+            animations: ['swing', 'swipe', 'slide', 'rotate', 'snake', 'window', 'scroll', 'fade', 'dynamic'],
             animation_default: 'slide', // default value
             aspect_ratios: [
                 'wide',

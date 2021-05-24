@@ -1,12 +1,10 @@
 const plugin = require('tailwindcss/plugin')
-const fnc = require('./functions')
 const utilities = require('./utilities')
 const keyframes = require('./keyframes')
-const fs = require('fs')
 const _ = require('lodash')
 
 const ta_config_defaults = {
-    animations: ['swing', 'swipe', 'slide', 'rotate', 'snake', 'window', 'scroll', 'fade'],
+    animations: ['swing', 'swipe', 'slide', 'rotate', 'snake', 'window', 'scroll', 'fade', 'dynamic'],
     animation_default: 'slide',
     aspect_ratios: [
         'square',
@@ -49,81 +47,6 @@ const aspect_ratios = {
     super: 5 / 3,
     hd: 16 / 9,
     wide: 1.85 / 1,
-}
-
-if (process.env.NODE_ENV === 'test') {
-    let index = 0
-    for (index = 0; index < ta_config_defaults.aspect_ratios.length; index++) {
-        if (typeof ta_config_defaults.aspect_ratios[index] === 'string') {
-            if (typeof aspect_ratios[ta_config_defaults.aspect_ratios[index]] !== 'undefined') {
-                ta_config_defaults.aspect_ratios[index] = {
-                    name: ta_config_defaults.aspect_ratios[index],
-                    value: aspect_ratios[ta_config_defaults.aspect_ratios[index]],
-                }
-            }
-        } else {
-            for (const key in ta_config_defaults.aspect_ratios[index]) {
-                if (Object.hasOwnProperty.call(ta_config_defaults.aspect_ratios[index], key)) {
-                    ta_config_defaults.aspect_ratios[index] = {
-                        name: key,
-                        value: ta_config_defaults.aspect_ratios[index][key],
-                    }
-                }
-            }
-        }
-    }
-
-    const new_utilities = {}
-    const new_keyframes = {}
-
-    _.merge(new_utilities, utilities(ta_config_defaults))
-    _.merge(new_keyframes, keyframes(ta_config_defaults))
-    fs.writeFile('./ta-gallery-utilities.css', fnc.flattenObject(new_utilities), function (err) {
-        if (err) {
-            return console.log(err)
-        }
-    })
-    fs.writeFile('./ta-gallery-keyframes.css', fnc.flattenObject(new_keyframes), function (err) {
-        if (err) {
-            return console.log(err)
-        }
-    })
-    console.info('new_utilities', new_utilities)
-    console.info('new_keyframes', new_keyframes)
-}
-
-if (process.env.NODE_ENV === 'production') {
-    let index = 0
-    for (index = 0; index < ta_config_defaults.aspect_ratios.length; index++) {
-        if (typeof ta_config_defaults.aspect_ratios[index] === 'string') {
-            if (typeof aspect_ratios[ta_config_defaults.aspect_ratios[index]] !== 'undefined') {
-                ta_config_defaults.aspect_ratios[index] = {
-                    name: ta_config_defaults.aspect_ratios[index],
-                    value: aspect_ratios[ta_config_defaults.aspect_ratios[index]],
-                }
-            }
-        } else {
-            for (const key in ta_config_defaults.aspect_ratios[index]) {
-                if (Object.hasOwnProperty.call(ta_config_defaults.aspect_ratios[index], key)) {
-                    ta_config_defaults.aspect_ratios[index] = {
-                        name: key,
-                        value: ta_config_defaults.aspect_ratios[index][key],
-                    }
-                }
-            }
-        }
-    }
-
-    const new_utilities = {}
-
-    _.merge(new_utilities, utilities(ta_config_defaults))
-    _.merge(new_utilities, keyframes(ta_config_defaults))
-
-    fs.writeFile('./src/styles/ta-gallery.css', fnc.flattenObject(new_utilities), function (err) {
-        if (err) {
-            return console.log(err)
-        }
-    })
 }
 
 module.exports = plugin.withOptions((options = {}) => {

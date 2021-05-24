@@ -141,6 +141,23 @@
             "transform": "scale(1) translateZ(0)"
         },
         "rightIn": {
+            "transform": "scale(1) translateZ(0)"
+        },
+        "rightOut": {
+            "transform": "scale(1) translateZ(0)"
+        },
+        "leftIn": {
+            "transform": "scale(1) translateZ(0)"
+        },
+        "leftOut": {
+            "transform": "scale(1) translateZ(0)"
+        }
+    },
+    "dynamic": {
+        "default": {
+            "transform": "scale(1) translateZ(0)"
+        },
+        "rightIn": {
             "transform": "scale(0.98) translateZ(0)"
         },
         "rightOut": {

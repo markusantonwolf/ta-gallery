@@ -674,7 +674,7 @@
 @keyframes ta-gallery-fade-right-in {
 	from: 	{
 		opacity: 0;
-		transform: scale(1) translateZ(0);
+		transform: scale(0.98) translateZ(0);
 	}
 ;
 	to: 	{
@@ -692,7 +692,7 @@
 ;
 	to: 	{
 		opacity: 0;
-		transform: scale(1) translateZ(0);
+		transform: scale(1.02) translateZ(0);
 	}
 ;
 }
@@ -700,7 +700,7 @@
 @keyframes ta-gallery-fade-left-in {
 	from: 	{
 		opacity: 0;
-		transform: scale(1) translateZ(0);
+		transform: scale(0.98) translateZ(0);
 	}
 ;
 	to: 	{
@@ -718,7 +718,7 @@
 ;
 	to: 	{
 		opacity: 0;
-		transform: scale(1) translateZ(0);
+		transform: scale(1.02) translateZ(0);
 	}
 ;
 }
