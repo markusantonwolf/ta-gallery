@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TA-Gallery</title>
+        <link href="/css/layout.css" rel="stylesheet" />
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body class="bg-white font-sans tracking-wide leading-loose text-base text-gray-900 font-light hyphens antialiased">
+        <div class="flex flex-col min-h-screen">
+            <div class="flex-grow container mx-auto text-center my-6">
+                <div class="md:w-2/3 leading-normal text-xl font-light mx-auto px-5 sm:px-2">
+                    <h1 class="mx-auto w-1/2 my-8">
+                        <img src="/img/logo-ta-gallery.png" alt="Logo TA-Pagination" class="w-full" />
+                    </h1>
+                </div>
+                <div class="mx-auto max-w-4xl px-5 my-12">
+                    <h2 class="text-5xl leading-tight font-light mb-5">TA-Gallery</h2>
+                    <h3 class="text-2xl leading-snug font-light">
+                        You can use the light-weight, responsive and mobile first gallery, carousel, slide show or
+                        rotator for images, texts and every kind of content.
+                    </h3>
+                    <p class="text-xl flex items-center justify-around my-4">
+                        <a href="index.html" class="text-primary-500 font-bold underline mx-4">Alpine V2</a>
+                    </p>
+                </div>
+                <div class="w-full lg:w-2/3 mx-auto">
+                    <div
+    class="ta-gallery ta-gallery-aspect-hd mb-8"
+    x-data="taGallery"
+    data-start="0"
+    data-timing="ease-in-out"
+    data-duration="0.3s"
+>
+    <!--- START SLIDES /-->
+    <div class="ta-gallery-element ta-gallery-anim-dynamic rounded-lg" x-cloak>
+        <figure>
+            <img
+                src="https://picsum.photos/800/500?random=1"
+                alt="Example Image"
+                class="ta-gallery-image"
+                loading="lazy"
+                x-ref="height"
+            />
+            <figcaption
+                class="ta-gallery-image-caption text-sm font-semibold text-white bg-gray-900 bg-opacity-25 bg-blur-2 px-4 py-1"
+            >
+                Example Image
+            </figcaption>
+        </figure>
+    </div>
+    <div class="ta-gallery-element ta-gallery-anim-dynamic rounded-lg" x-cloak>
+        <figure>
+            <img
+                src="https://picsum.photos/800/500?random=2"
+                alt="Example Image"
+                class="ta-gallery-image"
+                loading="lazy"
+                x-ref="height"
+            />
+            <figcaption
+                class="ta-gallery-image-caption text-sm font-semibold text-white bg-gray-900 bg-opacity-25 bg-blur-2 px-4 py-1"
+            >
+                Example Image
+            </figcaption>
+        </figure>
+    </div>
+    <!--- EXAMPLE TEXT SLIDE /-->
+    <div
+        class="ta-gallery-element ta-gallery-anim-dynamic flex-center bg-teal-200 bg-opacity-95 bg-blur-1 rounded-lg px-12 sm:px-24 py-8 sm:py-12"
+        x-cloak
+    >
+        <div class="text-base sm:text-xl font-semibold text-gray-900 leading-relaxed text-center">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi quasi incidunt dolorum cupiditate! Aut amet
+            nesciunt, neque vitae non error culpa suscipit nobis placeat vel dolores earum dolore reiciendis
+            consectetur?
+        </div>
+    </div>
+    <!--- END SLIDES /-->
+    <!--- START BACKGROUND /-->
+    <div
+        class="ta-gallery-background bg-gray-100 flex flex-col justify-center items-center rounded-lg text-center overflow-hidden shadow-xl"
+    >
+        <div class="text-3xl font-bold text-gray-900 leading-normal w-2/3 opacity-75">Lorem ipsum dolor sit amet</div>
+    </div>
+    <!--- END BACKGROUND /-->
+    <!--- START BUTTONS /-->
+    <button
+        type="button"
+        class="ta-gallery-button -left-5 sm:left-2 border-2 border-white bg-black bg-opacity-75 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-xl focus:ring focus:ring-primary"
+        x-on:click="previous()"
+        x-show="loaded"
+    >
+        <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+            <path
+                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            ></path>
+        </svg>
+    </button>
+    <button
+        type="button"
+        class="ta-gallery-button -right-5 sm:right-2 border-2 border-white bg-black bg-opacity-75 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-xl focus:ring focus:ring-primary"
+        x-on:click="next()"
+        x-show="loaded"
+    >
+        <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+            <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            ></path>
+        </svg>
+    </button>
+    <!--- END BUTTONS /-->
+</div>
+
+                </div>
+            </div>
+            <div><div class="w-full bg-gray-50">
+    <div class="max-w-2xl w-full lg:w-1/2 leading-normal text-xl font-light mx-auto py-12 px-2">
+        <div class="mx-auto w-1/2 my-8">
+            <img src="/img/logo-ta-styled-plugins.png" alt="Logo TA StyledPLUGINS" class="w-full" />
+        </div>
+        <p class="text-center pb-4">
+            TA StylesPLUGINS stands for light-weight, responsive and mobile first. All plugins are based
+            on Tailwind CSS and Alpine JS. All are 100% customizable with endless animation options.
+        </p>
+    </div>
+</div>
+ <div class="bg-blue-900 text-white font-medium">
+    <div class="container mx-auto py-6 text-center">
+        <p class="text-xs mx-2">
+            Licensed under the MIT license, see
+            <a
+                href="https://github.com/markusantonwolf/ta-gallery/blob/master/licence.md"
+                target="_blank"
+                >LICENSE.md</a
+            >
+            for details.
+        </p>
+    </div>
+</div>
+</div>
+        </div>
+        <script src="/js/ta-gallery-next.js"></script>
+    </body>
+</html>

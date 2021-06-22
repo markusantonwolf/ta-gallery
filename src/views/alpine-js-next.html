@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TA-Gallery</title>
+        <link href="/css/layout.css" rel="stylesheet" />
+        <script src="//unpkg.com/alpinejs" defer></script>
+    </head>
+    <body class="bg-white font-sans tracking-wide leading-loose text-base text-gray-900 font-light hyphens antialiased">
+        <div class="flex flex-col min-h-screen">
+            <div class="flex-grow container mx-auto text-center my-6">
+                <div class="md:w-2/3 leading-normal text-xl font-light mx-auto px-5 sm:px-2">
+                    <h1 class="mx-auto w-1/2 my-8">
+                        <img src="/img/logo-ta-gallery.png" alt="Logo TA-Pagination" class="w-full" />
+                    </h1>
+                </div>
+                <div class="mx-auto max-w-4xl px-5 my-12">
+                    <h2 class="text-5xl leading-tight font-light mb-5">TA-Gallery</h2>
+                    <h3 class="text-2xl leading-snug font-light">
+                        You can use the light-weight, responsive and mobile first gallery, carousel, slide show or
+                        rotator for images, texts and every kind of content.
+                    </h3>
+                    <p class="text-xl flex items-center justify-around my-4">
+                        <a href="index.html" class="text-primary-500 font-bold underline mx-4">Alpine V2</a>
+                    </p>
+                </div>
+                <div class="w-full lg:w-2/3 mx-auto">
+                    @@include('../snippets/gallery-next-mixed.html')
+                </div>
+            </div>
+            <div>@@include('../snippets/ta-styled-plugins.html') @@include('../snippets/footer.html')</div>
+        </div>
+        <script src="/js/ta-gallery-next.js"></script>
+    </body>
+</html>

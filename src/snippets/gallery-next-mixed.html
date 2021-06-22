@@ -1,0 +1,86 @@
+<div
+    class="ta-gallery ta-gallery-aspect-hd mb-8"
+    x-data="taGallery"
+    data-start="0"
+    data-timing="ease-in-out"
+    data-duration="0.3s"
+>
+    <!--- START SLIDES /-->
+    <div class="ta-gallery-element ta-gallery-anim-dynamic rounded-lg" x-cloak>
+        <figure>
+            <img
+                src="https://picsum.photos/800/500?random=1"
+                alt="Example Image"
+                class="ta-gallery-image"
+                loading="lazy"
+                x-ref="height"
+            />
+            <figcaption
+                class="ta-gallery-image-caption text-sm font-semibold text-white bg-gray-900 bg-opacity-25 bg-blur-2 px-4 py-1"
+            >
+                Example Image
+            </figcaption>
+        </figure>
+    </div>
+    <div class="ta-gallery-element ta-gallery-anim-dynamic rounded-lg" x-cloak>
+        <figure>
+            <img
+                src="https://picsum.photos/800/500?random=2"
+                alt="Example Image"
+                class="ta-gallery-image"
+                loading="lazy"
+                x-ref="height"
+            />
+            <figcaption
+                class="ta-gallery-image-caption text-sm font-semibold text-white bg-gray-900 bg-opacity-25 bg-blur-2 px-4 py-1"
+            >
+                Example Image
+            </figcaption>
+        </figure>
+    </div>
+    <!--- EXAMPLE TEXT SLIDE /-->
+    <div
+        class="ta-gallery-element ta-gallery-anim-dynamic flex-center bg-teal-200 bg-opacity-95 bg-blur-1 rounded-lg px-12 sm:px-24 py-8 sm:py-12"
+        x-cloak
+    >
+        <div class="text-base sm:text-xl font-semibold text-gray-900 leading-relaxed text-center">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi quasi incidunt dolorum cupiditate! Aut amet
+            nesciunt, neque vitae non error culpa suscipit nobis placeat vel dolores earum dolore reiciendis
+            consectetur?
+        </div>
+    </div>
+    <!--- END SLIDES /-->
+    <!--- START BACKGROUND /-->
+    <div
+        class="ta-gallery-background bg-gray-100 flex flex-col justify-center items-center rounded-lg text-center overflow-hidden shadow-xl"
+    >
+        <div class="text-3xl font-bold text-gray-900 leading-normal w-2/3 opacity-75">Lorem ipsum dolor sit amet</div>
+    </div>
+    <!--- END BACKGROUND /-->
+    <!--- START BUTTONS /-->
+    <button
+        type="button"
+        class="ta-gallery-button -left-5 sm:left-2 border-2 border-white bg-black bg-opacity-75 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-xl focus:ring focus:ring-primary"
+        x-on:click="previous()"
+        x-show="loaded"
+    >
+        <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+            <path
+                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            ></path>
+        </svg>
+    </button>
+    <button
+        type="button"
+        class="ta-gallery-button -right-5 sm:right-2 border-2 border-white bg-black bg-opacity-75 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-xl focus:ring focus:ring-primary"
+        x-on:click="next()"
+        x-show="loaded"
+    >
+        <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+            <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            ></path>
+        </svg>
+    </button>
+    <!--- END BUTTONS /-->
+</div>

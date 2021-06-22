@@ -9,7 +9,9 @@ const NAME_ALPINE = config.get('name.alpine_js')
 const DESTINATION_ALPINE = config.get('destination.alpine_js')
 
 const SOURCE_PLUGIN_JS = config.get('source.plugin_js')
+const SOURCE_PLUGIN_NEXT_JS = config.get('source.plugin_next_js')
 const NAME_PLUGIN_JS = config.get('name.plugin_js')
+const NAME_PLUGIN_NEXT_JS = config.get('name.plugin_next_js')
 const DESTINATION_PLUGIN_JS = config.get('destination.plugin_js')
 
 const SOURCE_PLUGIN_ALPINE_JS = config.get('source.plugin_alpine_js')
@@ -47,6 +49,24 @@ const ta_script = () => {
         )
         .pipe(dest(DESTINATION_PLUGIN_JS))
 }
+const ta_script_next = () => {
+    return src(SOURCE_PLUGIN_NEXT_JS)
+        .pipe(
+            babel({
+                presets: ['@babel/env'],
+            })
+        )
+        .pipe(concat(NAME_PLUGIN_NEXT_JS))
+        .pipe(
+            minify({
+                ext: {
+                    min: '.min.js',
+                },
+                ignoreFiles: ['.min.js'],
+            })
+        )
+        .pipe(dest(DESTINATION_PLUGIN_JS))
+}
 const ta_script_alpine = () => {
     return src(SOURCE_PLUGIN_ALPINE_JS)
         .pipe(concat(NAME_PLUGIN_ALPINE_JS))
@@ -61,4 +81,4 @@ const ta_script_alpine = () => {
         .pipe(dest(DESTINATION_PLUGIN_ALPINE_JS))
 }
 
-module.exports.scripts = series(parallel(alpine_js, ta_script), ta_script_alpine)
+module.exports.scripts = series(parallel(alpine_js, ta_script, ta_script_next), ta_script_alpine)
