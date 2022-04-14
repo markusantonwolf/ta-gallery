@@ -196,7 +196,7 @@ window.taGallery = function () {
       this.$watch('modal', function (value) {
         var event_name = 'ta-gallery-modal-hide';
         var event_object = {
-          show: hide,
+          show: false,
           index: _this.active_slide,
           src: _this.elements[_this.active_slide].src
         };

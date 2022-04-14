@@ -164,7 +164,7 @@ document.addEventListener('alpine:init', () => {
             this.$watch('modal', (value) => {
                 var event_name = 'ta-gallery-modal-hide'
                 var event_object = {
-                    show: hide,
+                    show: false,
                     index: this.active_slide,
                     src: this.elements[this.active_slide].src,
                 }
