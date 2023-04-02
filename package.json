@@ -43,9 +43,7 @@
         "change-case": "^4.1.2",
         "lodash": "^4.17.20"
     },
-    "peerDependencies": {
-        "tailwindcss": "^1.8.3 || ^2.0.0 || ^3.0.0"
-    },
+    "peerDependencies": {},
     "devDependencies": {
         "@babel/core": "^7.16.7",
         "@babel/preset-env": "^7.16.7",
